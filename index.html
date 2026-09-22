@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pokémon Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Pokémon List</h1>
+        <p>List all your Pokémons here, to get a better control of your collection.</p>
+    </header>
+
+    <main>
+        <section>
+            <form id="pokemon-form">
+                <h2>Add Pokémon</h2>
+                    <div>
+                        <input id="pokemon-name" type="text" placeholder="Pokémon name" required>
+                        <input id="pokemon-type" type="text" placeholder="Pokémon type" required>            
+                        <input id="pokemon-level" type="number" placeholder="Pokémon level" min="1" required>
+                    </div>
+                        <label>
+                            <input id="pokemon-caught" type="checkbox">Caught
+                        </label>
+
+                        <label>
+                            <input id="pokemon-favorite" type="checkbox">Favorite
+                        </label>
+
+                        <button type="submit">Add Pokémon</button>
+            </form>
+
+
+            <!-- **************************
+                 FILTER
+            *************************** -->
+
+            <label for="pokemon-filter">Filter Pokémon:</label>
+
+            <select id="pokemon-filter">
+                <option value="all">All</option>           
+                <option value="caught">Caught</option>
+                <option value="favorite">Favorites</option>
+            </select>
+
+
+            <!-- **************************
+                 SORT
+            *************************** -->
+
+            <label for="pokemon-sort">Sort Pokémon by:</label>
+                
+            <select id="pokemon-sort">
+                <option value="name">Name</option>
+                <option value="type">Type</option>                                   
+                <option value="level-low">Level: Low to High</option>                  
+                <option value="level-high">Level: High to Low</option>
+            </select>
+
+
+            <!-- **************************
+                 POKÉMON LIST
+            *************************** -->
+
+            <div id="pokemon-list"></div>
+
+
+            <!-- **************************
+                 DELETE ALL
+            *************************** -->
+
+            <button
+                id="delete-all-button"type="button">Delete All Pokémon</button>
+
+            <!-- **************************
+                 STATISTICS
+            *************************** -->
+
+            <section id="pokemon-stats">
+
+                <h2>Statistics</h2>
+
+                <p id="total-pokemon">
+                    Total Pokémon: 0
+                </p>
+
+            </section>
+
+
+            <!-- **************************
+                 POKÉMON CARD TEMPLATE
+            *************************** -->
+
+            <template id="pokemon-template">
+
+                <div class="pokemon-card">
+                    <p class="pokemon-name"></p>
+                    <p class="pokemon-type"></p>
+                    <p class="pokemon-level"></p>
+                    <p class="caught-status"></p>
+                    <p class="favorite-status"></p>
+
+                    <button class="delete-button" type="button">Delete</button>
+                    <button class="favorite-button" type="button">Favorite</button>                                             
+                </div>
+            </template>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
